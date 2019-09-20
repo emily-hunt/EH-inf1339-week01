@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Universe</title>
+    <style>
+        .standardTable {
+            border: solid;
+            border-collapse: collapse;
+        }
+        .blackbox {
+            border: solid;
+            height: 175px;
+            width: 175px;
+            text-align: center;
+            background-color: black;
+            border-color: white;
+            color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        function display(number) {
+            // for now just display the number in a <p> element
+            document.getElementById("decimal_input").innerHTML = number
+            document.getElementById("binary_output").innerHTML= dec2bin(number)
+        }
+        function dec2bin(decimal) {
+            // substitute a non-algorithmic solution
+            // for the short term (we'll replace it later)
+            var binary_numbers = ["0000", "0001", "0010", "0011",
+                                 "0100", "0101", "0110", "0111", 
+                                 "1000", "1001"]
+            return binary_numbers[decimal]
+        }
+    </script>
+    <h2 style="color:darkblue">Binary Conversion</h2>
+</head>
+<body>
+    <h3>Version 05 Decimal to Binary</h3>
+    <table class="standardTable">
+        <td class="blackbox"><h4>Keypad Input</h4>
+            <button type="button" onclick="display(1)">1</button> 
+            <button type="button" onclick="display(2)">2</button> 
+            <button type="button" onclick="display(3)">3</button><br \>
+            <button type="button" onclick="display(4)">4</button> 
+            <button type="button" onclick="display(5)">5</button> 
+            <button type="button" onclick="display(6)">6</button><br \>
+            <button type="button" onclick="display(7)">7</button> 
+            <button type="button" onclick="display(8)">8</button> 
+            <button type="button" onclick="display(9)">9</button><br \>
+            <button type="button" onclick="display(0)">0</button> 
+        </td>
+        <td class="blackbox">
+            <h4>Convert Decimal to Binary</h4>
+            <p id="decimal_input">???</p>
+            <p id="binary_output">???</p>
+        </td>
+        <td class="blackbox"><h4>Convert Binary to Segments to Illuminate</h4></td>
+        <td class="blackbox"><h4>Illuminate Segments</h4></td>
+    </table>
+</body>
+</html>
