@@ -74,7 +74,7 @@
             // expression for D ~w~x~z + ~w~xyz + ~wx~yz + ~wxy~z + w~x~y
             var d = !w&!x&!z || !w&!x&y&z || !w&x&!y&z || !w&x&y&!z || w&!x&!y;
             // expression for E ~x~z + ~wx~z
-            var e = !x&!z || !w&x&!z;
+            var e = !x&!z || !w&x&y&!z;
             // expression for F ~w~x~y~z + ~wx~y + ~wxy~z + w~x~y
             var f = !w&!x&!y&!z || !w&x&!y || !w&x&y&!z || w&!x&!y;
             // expression for G ~w~xy + ~wx~y~z + ~wx~yz + ~wxy~z + w~x~y
