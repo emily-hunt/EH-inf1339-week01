@@ -27,6 +27,28 @@
             border:none;
             
         }
+        .horizontal {
+            width: 40px;
+            height: 10px;
+        }
+        .vertical {
+            width: 10px;
+            height: 40px:
+        }
+        .middle {
+            height: 40px;
+            width: 40px;
+        }
+        .corner {
+            width: 10px;
+            height: 10px;
+        }
+        .red {
+            background-color: red;
+        }
+        .black {
+            background-color: black;
+        }
     </style>
     <script type="text/javascript">
         function display(number) {
@@ -43,7 +65,7 @@
             // send ssd signal to function illuminate_segments()
             document.getElementById("illuminate_input").innerHTML = ssd
             illuminate(ssd)
-            document.getElementById("illuminate_output").innerHTML= "done"
+            document.getElementById("illuminate_output").innerHTML= ""
             
         }
         function dec2bin(decimal) {
@@ -90,8 +112,42 @@
             if (g) {output = output + '1'} else {output = output + '0'}
             return output; // initial default just illuminates segment A
         }
-        function illuminate(ssd){
-            
+        function illuminate(signals){
+            if (signals[0] == '1') {
+                document.getElementById("segmentA").innerHTML = ''
+                document.getElementById("segmentA").setAttribute("class", "red")} 
+            else {document.getElementById("segmentA").innerHTML = ''
+                 document.getElementById("segmentA").setAttribute("class", "black")}
+            if (signals[1] == '1') {
+                document.getElementById("segmentB").innerHTML = ''
+                document.getElementById("segmentB").setAttribute("class", "red")}
+            else {document.getElementById("segmentB").innerHTML = ''
+                 document.getElementById("segmentB").setAttribute("class", "black")}
+            if (signals[2] == '1') {
+                document.getElementById("segmentC").innerHTML = ''
+                document.getElementById("segmentC").setAttribute("class", "red")}
+            else {document.getElementById("segmentC").innerHTML = ''
+                 document.getElementById("segmentC").setAttribute("class", "black")}
+            if (signals[3] == '1') {
+                document.getElementById("segmentD").innerHTML = ''
+                document.getElementById("segmentD").setAttribute("class", "red")}
+            else {document.getElementById("segmentD").innerHTML = ''
+                 document.getElementById("segmentD").setAttribute("class", "black")}
+            if (signals[4] == '1') {
+                document.getElementById("segmentE").innerHTML = ''
+                document.getElementById("segmentE").setAttribute("class", "red")}
+            else {document.getElementById("segmentE").innerHTML = ''
+                 document.getElementById("segmentE").setAttribute("class", "black")}
+            if (signals[5] == '1') {
+                document.getElementById("segmentF").innerHTML = ''
+                document.getElementById("segmentF").setAttribute("class", "red")}
+            else {document.getElementById("segmentF").innerHTML = ''
+                 document.getElementById("segmentF").setAttribute("class", "black")}
+            if (signals[6] == '1') {
+                document.getElementById("segmentG").innerHTML = ''
+                document.getElementById("segmentG").setAttribute("class", "red")}
+            else {document.getElementById("segmentG").innerHTML = ''
+                 document.getElementById("segmentG").setAttribute("class", "black")}
         }
     </script>
     <h2 style="color:darkblue">Segments</h2>
@@ -124,29 +180,29 @@
             <p class="center" id="illuminate_input"></p>
             <table>
                 <tr>
-                    <td class="notsevenSegmentTable"></td>
-                    <td id="segmentA" class="sevenSegmentTable">A</td>
-                    <td class="notsevenSegmentTable"></td>
+                    <td class="notsevenSegmentTable corner"></td>
+                    <td id="segmentA" class="sevenSegmentTable horizontal">A</td>
+                    <td class="notsevenSegmentTable corner"></td>
                 </tr>
                 <tr>
-                    <td id="segmentF" class="sevenSegmentTable">F</td>
-                    <td class="notsevenSegmentTable"></td>
-                    <td id="segmentB" class="sevenSegmentTable">B</td>
+                    <td id="segmentF" class="sevenSegmentTable vertical">F</td>
+                    <td class="notsevenSegmentTable middle"></td>
+                    <td id="segmentB" class="sevenSegmentTable vertical">B</td>
                 </tr>
                 <tr>
-                    <td class="notsevenSegmentTable"></td>
-                    <td id="segmentG" class="sevenSegmentTable">G</td>
-                    <td class="notsevenSegmentTable"></td>
+                    <td class="notsevenSegmentTable corner"></td>
+                    <td id="segmentG" class="sevenSegmentTable horizontal">G</td>
+                    <td class="notsevenSegmentTable corner"></td>
                 </tr>
                 <tr>
-                    <td id="segmentE" class="sevenSegmentTable">E</td>
-                    <td class="notsevenSegmentTable"></td>
-                    <td id="segmentC" class="sevenSegmentTable">C</td>
+                    <td id="segmentE" class="sevenSegmentTable vertical">E</td>
+                    <td class="notsevenSegmentTable middle"></td>
+                    <td id="segmentC" class="sevenSegmentTable vertical">C</td>
                 </tr>
                 <tr>
-                    <td class="notsevenSegmentTable"></td>
-                    <td id="segmentD" class="sevenSegmentTable">D</td>
-                    <td class="notsevenSegmentTable"></td>
+                    <td class="notsevenSegmentTable corner"></td>
+                    <td id="segmentD" class="sevenSegmentTable horizontal">D</td>
+                    <td class="notsevenSegmentTable corner"></td>
                 </tr>
             </table>
             <p id="illuminate_output"></p>
